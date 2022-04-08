@@ -1051,7 +1051,9 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io();
+      // points to the top level of server url it is deployed to
+      const socketUrl = "/";
+      var socket = io(socketUrl);
       const fakePointer = document.getElementById("fake-pointer");
       console.log("fakePointer", fakePointer);
 
