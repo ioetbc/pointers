@@ -7,6 +7,11 @@ const io = new Server(server);
 
 const { uuid } = require("uuidv4");
 
+app.get("/", (req, res) => {
+  res.send("bitch");
+  // res.sendFile(__dirname + "/index.html");
+});
+
 io.on("connection", (socket) => {
   socket.on("chat message", (msg) => {
     const clientCount = io.engine.clientsCount;
