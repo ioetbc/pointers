@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://arc-ggd.vercel.app/",
+    origin: "https://arc-ggd.vercel.app",
   },
 });
 
