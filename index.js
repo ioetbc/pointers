@@ -1,11 +1,16 @@
 const express = require("express");
 const app = express();
 const http = require("http");
+const cors = require("cors");
 const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+// const { Server } = require("socket.io");
+// const io = new Server(server);
 
-const { uuid } = require("uuidv4");
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "https://arc-ggd.vercel.app/",
+  },
+});
 
 app.get("/", (req, res) => {
   res.send("bitch");
@@ -14,9 +19,7 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   socket.on("chat message", (msg) => {
-    const clientCount = io.engine.clientsCount;
-    console.log("clientCount", clientCount);
-    socket.broadcast.emit("chat message", { msg, clientCount, id: uuid() });
+    socket.broadcast.emit("chat message", { msg });
   });
 });
 
