@@ -20,7 +20,7 @@
   <body>
     <!-- <img src="/public/ai-face-1.jpg" id="fake-pointer" class="fake-pointer" /> -->
 
-    <div id="fake-pointer" class="fake-pointer">
+    <!-- <div id="fake-pointer" class="fake-pointer"> -->
       <svg
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1054,13 +1054,14 @@
       // points to the top level of server url it is deployed to
       const socketUrl = "/";
       var socket = io(socketUrl);
-      const fakePointer = document.getElementById("fake-pointer");
-      console.log("fakePointer", fakePointer);
+    //   const fakePointer = document.getElementById("fake-pointer");
+    //   console.log("fakePointer", fakePointer);
 
       socket.on("chat message", function (msg) {
-        console.log({ x: msg.x, y: msg.y });
-        fakePointer.style.left = `${msg.x}px`;
-        fakePointer.style.top = `${msg.y}px`;
+          console.log('etf')
+        // console.log({ x: msg.x, y: msg.y });
+        // fakePointer.style.left = `${msg.x}px`;
+        // fakePointer.style.top = `${msg.y}px`;
       });
 
       onmousemove = function (e) {

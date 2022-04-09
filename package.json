@@ -4,7 +4,8 @@
   "description": "my first socket.io app",
   "dependencies": {
     "express": "^4.17.3",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "uuidv4": "^6.2.13"
   },
   "engines": {
     "node": "14"
